@@ -1,14 +1,18 @@
 package application;
 
-import boardgame.Position;
+import chess.ChessMatch;
+import boardgame.Board;
 
 public class Program {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
-		Position pos = new Position(3, 5);
-		System.out.println(pos);
+		ChessMatch chessMatch = new ChessMatch();
+
+		// UI: User Interface Class
+		UI.printBoard(chessMatch.getPieces());
+
+
 	}
 
 }
