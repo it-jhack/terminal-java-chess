@@ -28,7 +28,7 @@ public class UI {
         else {
             System.out.print(piece);
         }
-        // Intercalating spaces to avoid pieces being visually too crammed
+        // Spaces between to avoid pieces being visually too crammed
         System.out.print(" ");
     }
 }
