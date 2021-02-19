@@ -3,7 +3,13 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../../../Test/Test.iml" filepath="$PROJECT_DIR$/../../../Test/Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../java-simple-program-examples/bank-account-2/bank-account-2.iml" filepath="$PROJECT_DIR$/../java-simple-program-examples/bank-account-2/bank-account-2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../java-simple-program-examples/business-bank-account/business-bank-account.iml" filepath="$PROJECT_DIR$/../java-simple-program-examples/business-bank-account/business-bank-account.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../java-simple-program-examples/product-import-used/product-import-used.iml" filepath="$PROJECT_DIR$/../java-simple-program-examples/product-import-used/product-import-used.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../java-simple-program-examples/product-order/product-order.iml" filepath="$PROJECT_DIR$/../java-simple-program-examples/product-order/product-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../java-simple-program-examples/tax/tax.iml" filepath="$PROJECT_DIR$/../java-simple-program-examples/tax/tax.iml" />
       <module fileurl="file://$PROJECT_DIR$/terminal-java-chess.iml" filepath="$PROJECT_DIR$/terminal-java-chess.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../java-simple-program-examples/worker-outsourced/worker-outsourced.iml" filepath="$PROJECT_DIR$/../java-simple-program-examples/worker-outsourced/worker-outsourced.iml" />
     </modules>
   </component>
 </project>
