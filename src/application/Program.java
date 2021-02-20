@@ -16,6 +16,7 @@ public class Program {
 
 		while (true) { // TODO change 'true' for '!checkmate' condition
 			// UI: User Interface
+			UI.clearConsole();
 			UI.printBoard(chessMatch.getPieces());
 			System.out.println();
 			System.out.print("Source: ");

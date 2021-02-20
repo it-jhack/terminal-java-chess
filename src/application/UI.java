@@ -32,6 +32,12 @@ public class UI {
     public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
     public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 
+    // Clear terminal screen after each turn
+    public static void clearConsole() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
     // Receiving position input from user
     public static ChessPosition readChessPosition(Scanner sc) {
         try {
