@@ -1,10 +1,12 @@
 package application;
 
+import chess.ChessException;
 import chess.ChessMatch;
 import boardgame.Board;
 import chess.ChessPiece;
 import chess.ChessPosition;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Program {
@@ -15,17 +17,31 @@ public class Program {
 		ChessMatch chessMatch = new ChessMatch();
 
 		while (true) { // TODO change 'true' for '!checkmate' condition
-			// UI: User Interface
-			UI.clearConsole();
-			UI.printBoard(chessMatch.getPieces());
-			System.out.println();
-			System.out.print("Source: ");
-			ChessPosition source = UI.readChessPosition(sc);
+			try {
+				// UI: User Interface
+				UI.clearConsole();
+				UI.printBoard(chessMatch.getPieces());
+				System.out.println();
+				System.out.print("Source: ");
+				ChessPosition source = UI.readChessPosition(sc);
 
-			System.out.print("Target: ");
-			ChessPosition target = UI.readChessPosition(sc);
+				System.out.print("Target: ");
+				ChessPosition target = UI.readChessPosition(sc);
 
-			ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
+				ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
+			}
+			catch (ChessException e) {
+				System.out.println(e.getMessage());
+				System.out.println("Press Enter to Continue.");
+				sc.nextLine(); // wait to press 'Enter' after error
+			}
+			catch (InputMismatchException e) {
+				System.out.println(e.getMessage());
+				System.out.println("Press Enter to Continue.");
+				sc.nextLine(); // wait to press 'Enter' after error
+			}
+
+
 
 		}
 
