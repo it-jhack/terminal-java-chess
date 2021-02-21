@@ -1,6 +1,7 @@
 package chess.pieces;
 
 import boardgame.Board;
+import boardgame.Position;
 import chess.ChessPiece;
 import chess.Color;
 
@@ -13,6 +14,12 @@ public class Rook extends ChessPiece{
     @Override
     public String toString() {
         return "R";
+    }
+
+    @Override
+    public boolean[][] possibleMoves() { //TODO delete generic possibleMoves(); implement specific logic;
+        boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
+        return mat;
     }
 
 }

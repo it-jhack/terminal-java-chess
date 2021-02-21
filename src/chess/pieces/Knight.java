@@ -13,4 +13,10 @@ public class Knight extends ChessPiece {
     public String toString() {
         return "N";
     }
+
+    @Override
+    public boolean[][] possibleMoves() { //TODO delete generic possibleMoves(); implement specific logic;
+        boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
+        return mat;
+    }
 }
