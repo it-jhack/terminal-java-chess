@@ -3,6 +3,7 @@ package chess;
 import boardgame.Position;
 
 public class ChessPosition {
+
     private char column;
     private int row;
 
@@ -36,3 +37,29 @@ public class ChessPosition {
     }
 
 }
+
+/*
+Row and Column:
+0 - - - - - - - -
+1 - - - - - - X -
+2 - - - - - - - -
+3 - - - - - - - -
+4 - - - - - - - -
+5 - - - - - - - -
+6 - - - - - - - -
+7 - - - - - - - -
+  0 1 2 3 4 5 6 7
+  X == 1,6
+
+Source and Target:
+8 - - - - - - - -
+7 - - - - - - X -
+6 - - - - - - - -
+5 - - - - - - - -
+4 - - - - - - - -
+3 - - - - - - - -
+2 - - - - - - - -
+1 - - - - - - - -
+  a b c d e f g h
+  X == g7
+ */
