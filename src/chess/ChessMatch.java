@@ -95,7 +95,8 @@ public class ChessMatch {
     }
 
     private Piece makeMove(Position source, Position target) {
-        Piece piece = board.removePiece(source);
+        ChessPiece piece = (ChessPiece) board.removePiece(source);
+        piece.increaseMoveCount();
         Piece capturedPiece = board.removePiece(target);
         board.placePiece(piece, target);
 
@@ -109,7 +110,8 @@ public class ChessMatch {
     // Undo illegal move, example: King putting himself into check
     private void undoMove(Position source, Position target, Piece capturedPiece) {
         // Returning piece
-        Piece p = board.removePiece(target);
+        ChessPiece p = (ChessPiece) board.removePiece(target);
+        p.decreaseMoveCount();
         board.placePiece(p, source);
 
         // Returning captured piece, if there was one
