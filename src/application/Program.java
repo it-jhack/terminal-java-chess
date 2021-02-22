@@ -19,7 +19,7 @@ public class Program {
 		ChessMatch chessMatch = new ChessMatch();
 		List<ChessPiece> captured = new ArrayList<>();
 
-		while (true) { // TODO change 'true' for '!checkmate' condition
+		while (!chessMatch.getCheckMate()) {
 			try {
 				// UI: User Interface
 				UI.clearConsole();
@@ -55,8 +55,11 @@ public class Program {
 
 
 		}
+		// When checkMate conditon is true
+		UI.clearConsole();
+		UI.printMatch(chessMatch, captured);
 
-		// sc.close(); TODO uncomment after changing 'true' for '!checkmate' condition on 'while (true) {...}'
+		sc.close();
 	}
 
 }
