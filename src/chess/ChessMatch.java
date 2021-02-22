@@ -32,6 +32,12 @@ public class ChessMatch {
         return mat;
     }
 
+    public boolean[][] possibleMoves(ChessPosition sourcePosition) {
+        Position position = sourcePosition.toPosition();
+        validateSourcePosition(position);
+        return board.piece(position).possibleMoves();
+    }
+
     public ChessPiece performChessMove(ChessPosition sourcePos, ChessPosition targetPos) {
         Position source = sourcePos.toPosition();
         Position target = targetPos.toPosition();
@@ -41,7 +47,7 @@ public class ChessMatch {
 
         validateTargetPosition(source, target);
 
-        Piece capturedPiece = makeMove(source, target); //TODO makeMove()
+        Piece capturedPiece = makeMove(source, target);
         return (ChessPiece) capturedPiece;
     }
 
@@ -57,14 +63,14 @@ public class ChessMatch {
             throw new ChessException("There is no piece on source position!");
         }
         if (!board.piece(position).isThereAnyPossibleMove()) {
-            throw new ChessException("There are no possible moves for this piece.");
+            throw new ChessException("There are no possible moves for this piece!");
         }
     }
 
     private void validateTargetPosition(Position source, Position target) {
         // if for given source piece, target is NOT possible move
         if (!board.piece(source).possibleMove(target)) {
-            throw new ChessException("The selected piece cannot move to that target position.");
+            throw new ChessException("The selected piece cannot move to that target position!");
         }
     }
 
@@ -83,14 +89,14 @@ public class ChessMatch {
         placeNewPiece('b', 1, new Knight(board, Color.WHITE));
         placeNewPiece('g', 1, new Knight(board, Color.WHITE));
 
-        placeNewPiece('a', 2, new Pawn(board, Color.WHITE));
-        placeNewPiece('b', 2, new Pawn(board, Color.WHITE));
-        placeNewPiece('c', 2, new Pawn(board, Color.WHITE));
-        placeNewPiece('d', 2, new Pawn(board, Color.WHITE));
-        placeNewPiece('e', 2, new Pawn(board, Color.WHITE));
-        placeNewPiece('f', 2, new Pawn(board, Color.WHITE));
-        placeNewPiece('g', 2, new Pawn(board, Color.WHITE));
-        placeNewPiece('h', 2, new Pawn(board, Color.WHITE));
+//        placeNewPiece('a', 2, new Pawn(board, Color.WHITE));
+//        placeNewPiece('b', 2, new Pawn(board, Color.WHITE));
+//        placeNewPiece('c', 2, new Pawn(board, Color.WHITE));
+//        placeNewPiece('d', 2, new Pawn(board, Color.WHITE));
+//        placeNewPiece('e', 2, new Pawn(board, Color.WHITE));
+//        placeNewPiece('f', 2, new Pawn(board, Color.WHITE));
+//        placeNewPiece('g', 2, new Pawn(board, Color.WHITE));
+//        placeNewPiece('h', 2, new Pawn(board, Color.WHITE));
 
         placeNewPiece('d', 1, new Queen(board, Color.WHITE));
 
@@ -106,14 +112,14 @@ public class ChessMatch {
         placeNewPiece('b', 8, new Knight(board, Color.BLACK));
         placeNewPiece('g', 8, new Knight(board, Color.BLACK));
 
-        placeNewPiece('a', 7, new Pawn(board, Color.BLACK));
-        placeNewPiece('b', 7, new Pawn(board, Color.BLACK));
-        placeNewPiece('c', 7, new Pawn(board, Color.BLACK));
-        placeNewPiece('d', 7, new Pawn(board, Color.BLACK));
-        placeNewPiece('e', 7, new Pawn(board, Color.BLACK));
-        placeNewPiece('f', 7, new Pawn(board, Color.BLACK));
-        placeNewPiece('g', 7, new Pawn(board, Color.BLACK));
-        placeNewPiece('h', 7, new Pawn(board, Color.BLACK));
+//        placeNewPiece('a', 7, new Pawn(board, Color.BLACK));
+//        placeNewPiece('b', 7, new Pawn(board, Color.BLACK));
+//        placeNewPiece('c', 7, new Pawn(board, Color.BLACK));
+//        placeNewPiece('d', 7, new Pawn(board, Color.BLACK));
+//        placeNewPiece('e', 7, new Pawn(board, Color.BLACK));
+//        placeNewPiece('f', 7, new Pawn(board, Color.BLACK));
+//        placeNewPiece('g', 7, new Pawn(board, Color.BLACK));
+//        placeNewPiece('h', 7, new Pawn(board, Color.BLACK));
 
         placeNewPiece('d', 8, new Queen(board, Color.BLACK));
 

@@ -21,23 +21,27 @@ public class Program {
 				// UI: User Interface
 				UI.clearConsole();
 				UI.printBoard(chessMatch.getPieces());
-				System.out.println();
-				System.out.print("Source: ");
+				System.out.print("\nSource: ");
 				ChessPosition source = UI.readChessPosition(sc);
 
-				System.out.print("Target: ");
+				//showing possible moves on different color
+				boolean[][] possibleMoves = chessMatch.possibleMoves(source);
+				UI.clearConsole();
+				UI.printBoard(chessMatch.getPieces(), possibleMoves);
+
+				System.out.print("\nTarget: ");
 				ChessPosition target = UI.readChessPosition(sc);
 
 				ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
 			}
 			catch (ChessException e) {
 				System.out.println(e.getMessage());
-				System.out.println("Press Enter to Continue.");
+				System.out.println("Press Enter to continue");
 				sc.nextLine(); // wait to press 'Enter' after error
 			}
 			catch (InputMismatchException e) {
 				System.out.println(e.getMessage());
-				System.out.println("Press Enter to Continue.");
+				System.out.println("Press Enter to continue");
 				sc.nextLine(); // wait to press 'Enter' after error
 			}
 

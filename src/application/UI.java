@@ -59,7 +59,7 @@ public class UI {
 
             // Print chess pieces in line
             for (int j = 0; j < pieces.length; j++) {
-                printPiece(pieces[i][j]);
+                printPiece(pieces[i][j], false); // background = false
             }
             // Board line is over, so it needs to break line
             System.out.println();
@@ -68,10 +68,31 @@ public class UI {
         System.out.println("  a b c d e f g h");
     }
 
-    private static void printPiece(ChessPiece piece) {
+    // printBoard overload showing possible moves with colored background
+    public static void printBoard(ChessPiece[][] pieces, boolean[][] possibleMoves) {
+        for (int i = 0; i < pieces.length; i++) {
+            // Print line number coordinates
+            System.out.print((8 - i)+ " ");
+
+            // Print chess pieces in line
+            for (int j = 0; j < pieces.length; j++) {
+                printPiece(pieces[i][j], possibleMoves[i][j]);
+            }
+            // Board line is over, so it needs to break line
+            System.out.println();
+        }
+        // Print row letter coordinates at the bottom of the board
+        System.out.println("  a b c d e f g h");
+    }
+
+    private static void printPiece(ChessPiece piece, boolean background) {
+        if (background) {
+            System.out.print(ANSI_YELLOW_BACKGROUND);
+        }
+
         if (piece == null) {
             // Empty square
-            System.out.print("-");
+            System.out.print("-" + ANSI_RESET);
         }
         else {
             if (piece.getColor() == Color.WHITE) { // WHITE
