@@ -13,12 +13,23 @@ import chess.pieces.Rook;
 
 public class ChessMatch {
 
+    // in chess, turn++ when both players have already played, NOT at each play
+    private Integer turn = 1;
+    private Color currentPlayer = Color.WHITE;
     private Board board;
 
     // Creates the match - Standard chess board is 8 x 8.
     public ChessMatch() {
         board = new Board(8, 8);
         initialSetup();
+    }
+
+    public int getTurn() {
+        return turn;
+    }
+
+    public Color getCurrentPlayer() {
+        return currentPlayer;
     }
 
     // Returns a matrix of chess pieces corresponding to this match.
@@ -48,6 +59,9 @@ public class ChessMatch {
         validateTargetPosition(source, target);
 
         Piece capturedPiece = makeMove(source, target);
+
+        nextTurn();
+
         return (ChessPiece) capturedPiece;
     }
 
@@ -62,6 +76,9 @@ public class ChessMatch {
         if (!board.thereIsAPiece(position)) {
             throw new ChessException("There is no piece on source position!");
         }
+        if (currentPlayer != ((ChessPiece) board.piece(position)).getColor()) {
+            throw new ChessException("The selected piece is not yours!");
+        }
         if (!board.piece(position).isThereAnyPossibleMove()) {
             throw new ChessException("There are no possible moves for this piece!");
         }
@@ -71,6 +88,13 @@ public class ChessMatch {
         // if for given source piece, target is NOT possible move
         if (!board.piece(source).possibleMove(target)) {
             throw new ChessException("The selected piece cannot move to that target position!");
+        }
+    }
+
+    private void nextTurn() {
+        currentPlayer = (currentPlayer == Color.WHITE) ? Color.BLACK : Color.WHITE;
+        if (currentPlayer == Color.WHITE) {
+            turn++; // in chess, turn++ when both players have already played, NOT at each play
         }
     }
 
