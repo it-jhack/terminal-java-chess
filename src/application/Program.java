@@ -55,7 +55,7 @@ public class Program {
 
 
 		}
-		// When checkMate conditon is true
+		// When checkMate condition is true
 		UI.clearConsole();
 		UI.printMatch(chessMatch, captured);
 
