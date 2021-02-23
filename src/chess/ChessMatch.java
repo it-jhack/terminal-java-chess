@@ -236,7 +236,7 @@ public class ChessMatch {
         placeNewPiece('g', 2, new Pawn(board, Color.WHITE));
         placeNewPiece('h', 2, new Pawn(board, Color.WHITE));
 
-//        placeNewPiece('d', 1, new Queen(board, Color.WHITE));
+        placeNewPiece('d', 1, new Queen(board, Color.WHITE));
 
         placeNewPiece('a', 1, new Rook(board, Color.WHITE));
         placeNewPiece('h', 1, new Rook(board, Color.WHITE));
@@ -259,7 +259,7 @@ public class ChessMatch {
         placeNewPiece('g', 7, new Pawn(board, Color.BLACK));
         placeNewPiece('h', 7, new Pawn(board, Color.BLACK));
 
-//        placeNewPiece('d', 8, new Queen(board, Color.BLACK));
+        placeNewPiece('d', 8, new Queen(board, Color.BLACK));
 
         placeNewPiece('a', 8, new Rook(board, Color.BLACK));
         placeNewPiece('h', 8, new Rook(board, Color.BLACK));
