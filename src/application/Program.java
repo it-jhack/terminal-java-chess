@@ -2,7 +2,6 @@ package application;
 
 import chess.ChessException;
 import chess.ChessMatch;
-import boardgame.Board;
 import chess.ChessPiece;
 import chess.ChessPosition;
 
@@ -40,6 +39,17 @@ public class Program {
 				if (capturedPiece != null) {
 					captured.add(capturedPiece);
 				}
+
+				if (chessMatch.getPromoted() != null) {
+					System.out.println("Enter piece to be promoted: Q/R/N/B");
+					String type = sc.nextLine().toUpperCase();
+					while (!type.equals("Q") && !type.equals("R") && !type.equals("B") && !type.equals("N")) {
+						System.out.println("Invalid value! Please, try again.\nEnter piece to be promoted: Q/R/N/B");
+						type = sc.nextLine().toUpperCase();
+					}
+					chessMatch.replacePromotedPiece(type);
+				}
+
 			}
 			catch (ChessException e) {
 				System.out.println(e.getMessage());
@@ -51,9 +61,6 @@ public class Program {
 				System.out.println("Press Enter to continue");
 				sc.nextLine(); // wait to press 'Enter' after error
 			}
-
-
-
 		}
 		// When checkMate condition is true
 		UI.clearConsole();
