@@ -114,13 +114,6 @@ public class Pawn extends ChessPiece {
                 }
             }
         }
-
-        // TODO Promotion: pawn becomes another piece by reaching other side of board
-
-        // TODO "en passant" special capture
-        // "En passant" is when a pawn moves two squares and passes by a square
-        // being attacked by opponent's pawn. This special capture can only be
-        // performed in the play immediately after pawn has advanced.
         return mat;
     }
 }

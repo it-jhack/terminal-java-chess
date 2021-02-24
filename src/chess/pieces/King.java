@@ -88,7 +88,7 @@ public class King extends ChessPiece {
         }
 
         // CASTLING (see comments at the end of this Class for reference)
-        // TODO create logic that king cannot pass through square under attack
+        // TODO create logic (on castling) that king cannot pass through square under attack
         if(getMoveCount() == 0 && !chessMatch.getCheck()) {
             // King's side Castling
             Position posRook1 = new Position(position.getRow(), position.getColumn() + 3);

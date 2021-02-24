@@ -16,7 +16,7 @@ public class Queen extends ChessPiece {
     }
 
     @Override
-    public boolean[][] possibleMoves() { //TODO delete generic possibleMoves(); implement specific logic;
+    public boolean[][] possibleMoves() {
         boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
 
         Position p = new Position(0, 0);
